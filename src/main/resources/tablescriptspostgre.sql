@@ -561,4 +561,304 @@ insert into Images(image_id,link_image,reference) VALUES('I10070','https://lh3.g
 insert into Images(image_id,link_image,reference) VALUES('I10071','https://lh3.googleusercontent.com/4UIgVZ6z6jAW1zX5bg9Ia2TgoPiqEgznXeACS6-wO44_UxHYCtXSbsOZwKhe0T0P-m7bHM6ulXY9dHVC3pC5FdS_GnYdkTDhjq3ulG9lHGZYWLJ-BSKGnFtVne3KtO6HmWDYG5RQog','P10024');
 insert into Images(image_id,link_image,reference) VALUES('I10072','https://lh3.googleusercontent.com/y7lsMqVMF2mUXs58NjbHuD_9yxNoT8aYk5uMUYGnG2n3gnrFW1e7FbfgM4Pv3piaSjrTwuPNoxHUvD8Z0emAp6GAGk-ED_mauCiszkIPKr1ogmeRMis7DPuVCVtQUEgt2Mfa8w4tFQ','P10024');
 
+--Hibernate:
+--
+--    create table address (
+--       address_id varchar(255) not null,
+--        city varchar(255),
+--        pin_code int4,
+--        state varchar(255),
+--        street varchar(255),
+--        user_id varchar(255),
+--        primary key (address_id)
+--    )
+--Hibernate:
+--
+--    create table card (
+--       card_number varchar(16) not null,
+--        card_holder_name varchar(50),
+--        cvv varchar(3),
+--        expiry_month_year varchar(5),
+--        user_id varchar(255),
+--        primary key (card_number)
+--    )
+--Hibernate:
+--
+--    create table carousel (
+--       carousel_id varchar(7) not null,
+--        link_image varchar(250),
+--        link_route varchar(250),
+--        primary key (carousel_id)
+--    )
+--Hibernate:
+--
+--    create table cart (
+--       cart_id varchar(5) not null,
+--        product_ids varchar(1000),
+--        quantities varchar(1000),
+--        sizes varchar(255),
+--        total_cost float8,
+--        user_id varchar(255),
+--        primary key (cart_id)
+--    )
+--Hibernate:
+--
+--    create table contact (
+--       contact_id varchar(255) not null,
+--        contact_email varchar(255),
+--        message varchar(255),
+--        phone_no varchar(255),
+--        subject varchar(255),
+--        user_id varchar(255),
+--        primary key (contact_id)
+--    )
+--Hibernate:
+--
+--    create table images (
+--       image_id varchar(7) not null,
+--        link_image varchar(200),
+--        reference varchar(9),
+--        primary key (image_id)
+--    )
+--Hibernate:
+--
+--    create table orders (
+--       order_id varchar(5) not null,
+--        payment_type varchar(50),
+--        prices varchar(1000),
+--        product_ids varchar(1000),
+--        quantities varchar(1000),
+--        sizes varchar(255),
+--        time_of_order timestamp,
+--        total_cost float8,
+--        delivery_address varchar(255),
+--        user_id varchar(255),
+--        primary key (order_id)
+--    )
+--Hibernate:
+--
+--    create table product (
+--       product_id varchar(7) not null,
+--        avg_rating varchar(10),
+--        category category_type,
+--        cost float8,
+--        date_of_addition timestamp,
+--        discount float8,
+--        product_info varchar(2000),
+--        product_name varchar(150),
+--        quantity varchar(30),
+--        sex sex_type,
+--        size varchar(15),
+--        primary key (product_id)
+--    )
+--2021-01-23 20:30:40.744  WARN 13952 --- [         task-1] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+--    create table product (
+--       product_id varchar(7) not null,
+--        avg_rating varchar(10),
+--        category category_type,
+--        cost float8,
+--        date_of_addition timestamp,
+--        discount float8,
+--        product_info varchar(2000),
+--        product_name varchar(150),
+--        quantity varchar(30),
+--        sex sex_type,
+--        size varchar(15),
+--        primary key (product_id)
+--    )" via JDBC Statement
+--
+--org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+--    create table product (
+--       product_id varchar(7) not null,
+--        avg_rating varchar(10),
+--        category category_type,
+--        cost float8,
+--        date_of_addition timestamp,
+--        discount float8,
+--        product_info varchar(2000),
+--        product_name varchar(150),
+--        quantity varchar(30),
+--        sex sex_type,
+--        size varchar(15),
+--        primary key (product_id)
+--    )" via JDBC Statement
+--	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:277) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:314) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+--	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+--	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+--	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+--	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+--Caused by: org.postgresql.util.PSQLException: ERROR: type "category_type" does not exist
+--  Position: 121
+--	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2533) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2268) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:313) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268) ~[postgresql-42.2.12.jar:42.2.12]
+--	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.4.5.jar:na]
+--	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.4.5.jar:na]
+--	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	... 18 common frames omitted
+--
+--Hibernate:
+--
+--    create table review (
+--       review_id varchar(5) not null,
+--        rating_helpful int4,
+--        ratings rating_type,
+--        review_body varchar(500),
+--        review_date timestamp,
+--        review_title varchar(50),
+--        product_product_id varchar(7),
+--        user_user_id varchar(255),
+--        primary key (review_id)
+--    )
+--2021-01-23 20:30:40.749  WARN 13952 --- [         task-1] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+--    create table review (
+--       review_id varchar(5) not null,
+--        rating_helpful int4,
+--        ratings rating_type,
+--        review_body varchar(500),
+--        review_date timestamp,
+--        review_title varchar(50),
+--        product_product_id varchar(7),
+--        user_user_id varchar(255),
+--        primary key (review_id)
+--    )" via JDBC Statement
+--
+--org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+--    create table review (
+--       review_id varchar(5) not null,
+--        rating_helpful int4,
+--        ratings rating_type,
+--        review_body varchar(500),
+--        review_date timestamp,
+--        review_title varchar(50),
+--        product_product_id varchar(7),
+--        user_user_id varchar(255),
+--        primary key (review_id)
+--    )" via JDBC Statement
+--	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:277) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:314) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+--	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+--	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+--	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+--	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+--Caused by: org.postgresql.util.PSQLException: ERROR: type "rating_type" does not exist
+--  Position: 115
+--	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2533) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2268) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:313) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273) ~[postgresql-42.2.12.jar:42.2.12]
+--	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268) ~[postgresql-42.2.12.jar:42.2.12]
+--	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.4.5.jar:na]
+--	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.4.5.jar:na]
+--	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.15.Final.jar:5.4.15.Final]
+--	... 18 common frames omitted
+--
+--Hibernate:
+--
+--    create table users (
+--       user_id varchar(255) not null,
+--        contact_number varchar(255),
+--        date_of_birth date,
+--        email_id varchar(255),
+--        password varchar(255),
+--        user_name varchar(255),
+--        primary key (user_id)
+--    )
+--Hibernate:
+--
+--    alter table if exists cart
+--       drop constraint if exists UK_9emlp6m95v5er2bcqkjsw48he
+--2021-01-23 20:30:40.767  WARN 13952 --- [         task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+--2021-01-23 20:30:40.767  WARN 13952 --- [         task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_9emlp6m95v5er2bcqkjsw48he" of relation "cart" does not exist, skipping
+--Hibernate:
+--
+--    alter table if exists cart
+--       add constraint UK_9emlp6m95v5er2bcqkjsw48he unique (user_id)
+--Hibernate:
+--
+--    alter table if exists address
+--       add constraint FK6i66ijb8twgcqtetl8eeeed6v
+--       foreign key (user_id)
+--       references users
+--Hibernate:
+--
+--    alter table if exists card
+--       add constraint FKq5apcc4ddrab8t48q2uqvyquq
+--       foreign key (user_id)
+--       references users
+--Hibernate:
+--
+--    alter table if exists cart
+--       add constraint FKg5uhi8vpsuy0lgloxk2h4w5o6
+--       foreign key (user_id)
+--       references users
+--Hibernate:
+--
+--    alter table if exists contact
+--       add constraint FKbxl6anxo14q097g8cd2e51v55
+--       foreign key (user_id)
+--       references users
+--Hibernate:
+--
+--    alter table if exists orders
+--       add constraint FKktv9qk6kio1qrkgkw8w23ebr6
+--       foreign key (delivery_address)
+--       references address
+--Hibernate:
+--
+--    alter table if exists orders
+--       add constraint FK32ql8ubntj5uh44ph9659tiih
+--       foreign key (user_id)
+--       references users
+--Hibernate:
+--
+--    alter table if exists review
+--       add constraint FK11khguugixv7x8xw8gj99ph6m
+--       foreign key (product_product_id)
+--       references product
+--2021-01-23 20:30:40.788  WARN 13952 --- [         task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+--2021-01-23 20:30:40.789  WARN 13952 --- [         task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "review" does not exist, skipping
+--Hibernate:
+--
+--    alter table if exists review
+--       add constraint FKq6prfoeqnogpi44xmtbgyuj8p
+--       foreign key (user_user_id)
+--       references users
 
